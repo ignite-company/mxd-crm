@@ -1,5 +1,4 @@
 import React, {useState,useEffect,useMemo,useLayoutEffect} from 'react';
-import {brandImage} from './logo.js';
 import {
  LayoutDashboard, UsersRound, FileText, HardHat, CalendarDays, ListTodo,
  Menu, X, Plus, Search, Bell, ChevronDown, ChevronRight, ArrowUpRight,
@@ -65,7 +64,7 @@ function Editor({type,item,db,onClose,onSave,onDelete}){
  </div></div><div className="editor-actions">{!isNew&&<button type="button" className="btn btn-danger-ghost" onClick={()=>onDelete(type,item.id)}><Trash2 size={16}/>Delete</button>}<div className="editor-action-right"><button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button><button type="submit" className="btn btn-primary"><Check size={17}/>{isNew?'Create record':'Save changes'}</button></div></div></form>
  </div></div>
 }
-const MXD_LOGO=brandImage;
+const MXD_LOGO='https://assets.cdn.filesafe.space/bF1dT8IAVuvat84LkAVe/media/6ae0c6e1f43050a0a8e3db4e.png';
 function BrandLogo(){return <span className="brand-logo-image-wrap"><img className="brand-logo-image" src={MXD_LOGO} alt="MXD Junk Removal logo" loading="eager" decoding="async"/></span>}
 function Logo(){return <div className="brand"><BrandLogo/><div className="brand-copy"><strong>MXD</strong><span>JUNK REMOVAL</span></div></div>}
 function SectionHero({eyebrow,title,description,action,onAction,icon:Icon=Plus}){return <div className="section-intro"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>{action&&<button className="btn btn-primary new-action" onClick={onAction}><Icon size={17}/>{action}</button>}</div>}
